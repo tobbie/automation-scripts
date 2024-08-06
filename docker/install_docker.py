@@ -21,18 +21,19 @@ def ubuntu_install():
 
         print("verify docker installation was successful")
         os.system("sudo docker run hello-world")
+        adduser_to_docker_group()
     else:
         print("docker already installed...skipping")
 
 
 def adduser_to_docker_group():
-    user = os.getlogin()
-    print(user)
+    user = os.getenv('USER')
+    print(f"the current user is: {user}")
     os.system(f"sudo usermod -aG docker {user}")
 
 def main():
+    user = os.getenv('USER')
+    print(f"the current user is: {user}")
     ubuntu_install()
-    adduser_to_docker_group()
-
 
 main()
