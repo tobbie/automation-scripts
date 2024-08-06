@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import os
 
+
 def ubuntu_install():
     if os.system("sudo docker images") != 0:
         print("starting docker install")
