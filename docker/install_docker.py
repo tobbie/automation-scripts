@@ -33,8 +33,6 @@ def adduser_to_docker_group():
     os.system(f"sudo usermod -aG docker {user}")
 
 def main():
-    user = os.getenv('USER')
-    print(f"the current user is: {user}")
     ubuntu_install()
 
 main()
