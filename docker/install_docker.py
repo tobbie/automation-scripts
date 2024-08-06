@@ -24,7 +24,7 @@ def ubuntu_install():
         os.system("sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y")
 
         print("verify docker installation was successful")
-        os.system("sudo docker run hello-world")
+        os.system("sudo docker run hello-world | tee -a docker-install-log.txt")
         adduser_to_docker_group()
     else:
         print("docker already installed...skipping")
