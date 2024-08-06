@@ -7,7 +7,7 @@ def ubuntu_install():
         print("starting docker install by running apt-get update first")
         print("#####################################")
         os.system("sudo apt-get update -y")
-        os.system("sudo apt-get install ca-certificates curl")
+        os.system("sudo apt-get install -y ca-certificates curl")
        
         print("Now adding docker official GPG key")
         print("#####################################")
